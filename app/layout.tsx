@@ -28,6 +28,10 @@ const jetbrainsMono = JetBrains_Mono({
   display: 'swap',
 })
 
+const GOOGLE_SITE_VERIFICATION =
+  process.env.GOOGLE_SITE_VERIFICATION ??
+  process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION
+
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
@@ -92,6 +96,11 @@ export const metadata: Metadata = {
     ],
     apple: [{ url: '/icon-192.png', sizes: '192x192' }],
   },
+  verification: GOOGLE_SITE_VERIFICATION
+    ? {
+        google: GOOGLE_SITE_VERIFICATION,
+      }
+    : undefined,
   manifest: undefined,
 }
 
