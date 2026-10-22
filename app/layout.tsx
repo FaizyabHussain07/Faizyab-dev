@@ -64,7 +64,6 @@ export const metadata: Metadata = {
         type: 'image/png',
       },
     ],
-    siteName: SITE.name,
   },
   twitter: {
     card: 'summary_large_image',
