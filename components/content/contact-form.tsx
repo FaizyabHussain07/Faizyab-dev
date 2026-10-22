@@ -92,7 +92,6 @@ const FIELDS: Field[] = [
   {
     name: 'message',
     label: 'Message',
-    description: 'Tell me about your project, goals and any technical requirements.',
     type: 'textarea',
     placeholder: 'Tell me about your project, goals and any technical requirements.',
     required: true,
@@ -215,10 +214,10 @@ export function ContactForm() {
               <textarea
                 id={name}
                 name={name}
-                rows={5}
+                rows={6}
                 required={required}
                 placeholder={placeholder}
-                className="mt-1.5 min-h-[5.5rem] resize-y rounded-sm border border-rule bg-transparent px-3 py-2 text-[0.9375rem] text-ink placeholder:text-ink-muted focus:border-link focus:outline-none"
+                className="mt-1.5 block min-h-[9rem] resize-y rounded-sm border border-rule bg-transparent px-3 py-2 text-[0.9375rem] text-ink placeholder:text-ink-muted focus:border-link focus:outline-none w-full"
               />
             </div>
           )
@@ -305,14 +304,6 @@ export function ContactForm() {
           Messages go straight to my inbox. No account needed.
         </span>
       </div>
-      <p className="text-[0.8125rem] text-ink-muted">
-        FormSubmit sends this to{' '}
-        <a href="mailto:faizyabdev@gmail.com" className="link link-subtle">
-          faizyabdev@gmail.com
-        </a>{' '}
-        and only me. There is no separate sign-up step.
-      </p>
     </form>
   )
 }
-
