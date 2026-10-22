@@ -1,192 +1,27 @@
-const r = [
-  { e: false, n: 'termination', id: 'termination' },
-  { e: false, n: 'cause', id: 'cause' },
-  { e: false, n: 'damages', id: 'damages' },
-  { e: false, n: 'indemnification', id: 'indemnification' },
-  { e: false, n: 'limitation-of-liability', id: 'limitation-of-liability' },
-  { e: false, n: 'force-majeure', id: 'force-majeure' },
-  { e: false, n: 'dispute-resolution', id: 'dispute-resolution' },
-  { e: false, n: 'confidentiality', id: 'confidentiality' },
-  { e: false, n: 'publicity', id: 'publicity' },
-  { e: false, n: 'assignment', id: 'assignment' },
-  { e: false, n: 'notice', id: 'notice' },
-  { e: false, n: 'surviving-terms', id: 'surviving-terms' },
-  { e: false, n: 'severability', id: 'severability' },
-  { e: false, n: 'entire-agreement', id: 'entire-agreement' },
-  { e: false, n: 'modifications', id: 'modifications' },
-  { e: false, n: 'no-waiver', id: 'no-waiver' },
-  { e: false, n: 'notices-of-defect', id: 'notices-of-defect' },
-  { e: false, n: 'litigation-hold', id: 'litigation-hold' },
-  { e: false, n: 'relationship-of-parties', id: 'relationship-of-parties' },
-  { e: false, n: 'electronic-signature', id: 'electronic-signature' },
-  { e: false, n: 'penalty', id: 'penalty' },
-  { e: false, n: 'international-distribution', id: 'international-distribution' },
-  { e: false, n: 'international-bsa', id: 'international-bsa' },
-  { e: false, n: 'international-anti-corruption', id: 'international-anti-corruption' },
-  { e: false, n: 'international-export-control', id: 'international-export-control' },
-  { e: false, n: 'government-contractors', id: 'government-contractors' },
-  { e: false, n: 'preschool-streamlit', id: 'preschool-streamlit' },
-  { e: false, n: 'preschool', id: 'preschool' },
-  { e: false, n: 'saas', id: 'saas' },
-  { e: false, n: 'onboarding', id: 'onboarding' },
-  { e: false, n: 'payroll', id: 'payroll' },
-  { e: false, n: 'escalation', id: 'escalation' },
-  { e: false, n: 'marketaccess', id: 'marketaccess' },
-  { e: false, n: 'market-access', id: 'market-access' },
-  { e: false, n: 'non-exclusive', id: 'non-exclusive' },
-  { e: false, n: 'sublicensable', id: 'sublicensable' },
-  { e: false, n: 'restrictions', id: 'restrictions' },
-  { e: false, n: 'limitations', id: 'limitations' },
-  { e: false, n: 'massachusetts-law', id: 'massachusetts-law' },
-  { e: false, n: 'massachusetts', id: 'massachusetts' },
-  { e: false, n: 'insurance', id: 'insurance' },
-  { e: false, n: 'annual-billing', id: 'annual-billing' },
-  { e: false, n: 'mid-term-rate-adjustment', id: 'mid-term-rate-adjustment' },
-  { e: false, n: 'reasonableness-rights', id: 'reasonableness-rights' },
-  { e: false, n: 'miscellaneous-termination', id: 'miscellaneous-termination' },
-  { e: false, n: 'termination-by-buyer', id: 'termination-by-buyer' },
-  { e: false, n: 'termination-by-us', id: 'termination-by-us' },
-  { e: false, n: 'termination-for-convenience', id: 'termination-for-convenience' },
-  { e: false, n: 'termination-for-cause', id: 'termination-for-cause' },
-  { e: false, n: 'termination-settlement', id: 'termination-settlement' },
-  { e: false, n: 'how-to-cure', id: 'how-to-cure' },
-  { e: false, n: 'reaffirmation', id: 'reaffirmation' },
-  { e: false, n: 'insolvency-termination', id: 'insolvency-termination' },
-  { e: false, n: 'data-handling-changes', id: 'data-handling-changes' },
-  { e: false, n: 'transition-assistance', id: 'transition-assistance' },
-  { e: false, n: 'return-or-destruction', id: 'return-or-destruction' },
-  { e: false, n: 'intermediate-outputs', id: 'intermediate-outputs' },
-  { e: false, n: 'change-of-control', id: 'change-of-control' },
-  { e: false, n: 'non-solicitation', id: 'non-solicitation' },
-  { e: false, n: 'payment-terms', id: 'payment-terms' },
-  { e: false, n: 'scheduled-payments', id: 'scheduled-payments' },
-  { e: false, n: 'payment', id: 'payment' },
-  { e: false, n: 'invoicing', id: 'invoicing' },
-  { e: false, n: 'subscriptions', id: 'subscriptions' },
-  { e: false, n: 'term-lengths', id: 'term-lengths' },
-  { e: false, n: 'dtd', id: 'dtd' },
-  { e: false, n: 'termination-basics', id: 'termination-basics' },
-  { e: false, n: 'schedules-templates', id: 'schedules-templates' },
-  { e: false, n: 'setup', id: 'setup' },
-  { e: false, n: 'pricing-overview', id: 'pricing-overview' },
-  { e: false, n: 'pay-as-you-go-and-usage-billing', id: 'pay-as-you-go-and-usage-billing' },
-  { e: false, n: 'commitments', id: 'commitments' },
-  { e: false, n: 'cloud-resources-and-usage-billing', id: 'cloud-resources-and-usage-billing' },
-  { e: false, n: 'new-to-aws', id: 'new-to-aws' },
-  { e: false, n: 'enablement', id: 'enablement' },
-  { e: false, n: 'support', id: 'support' },
-  { e: false, n: 'managed-services', id: 'managed-services' },
-  { e: false, n: 'clients-and-partners', id: 'clients-and-partners' },
-  { e: false, n: 'training', id: 'training' },
-  { e: false, n: 'partner-agreement-faqs', id: 'partner-agreement-faqs' },
-  { e: false, n: 'send-your-first-message', id: 'send-your-first-message' },
-  { e: true, n: 'coaching exercises', id: 'coaching-exercises' },
-  { e: true, n: 'your settings and preferences', id: 'your-settings-and-preferences' },
-  { e: true, n: 'help and support', id: 'help-and-support' },
-  { e: true, n: 'your personal user guide', id: 'your-personal-user-guide' },
-  { e: true, n: 'account management', id: 'account-management' },
-  { e: true, n: 'selling and coaching', id: 'selling-and-coaching' },
-  { e: true, n: 'reporting and analytics', id: 'reporting-and-analytics' },
-  { e: true, n: 'settings for your account', id: 'settings-for-your-account' },
-  { e: true, n: 'account settings', id: 'account-settings' },
-  { e: true, n: 'what licenses are available', id: 'what-licenses-are-available' },
-  { e: true, n: 'account options', id: 'account-options' },
-  { e: true, n: 'buy licenses', id: 'buy-licenses' },
-  { e: true, n: 'use licenses', id: 'use-licenses' },
-  { e: true, n: 'activation', id: 'activation' },
-  { e: true, n: 'opt out of sales emails', id: 'opt-out-of-sales-emails' },
-  { e: true, n: 'gdpr forms and templates', id: 'gdpr-forms-and-templates' },
-  { e: true, n: 'gdpr compliance', id: 'gdpr-compliance' },
-  { e: true, n: 'dealing with gdpr requests', id: 'dealing-with-gdpr-requests' },
-  { e: true, n: 'about the gdpr application', id: 'about-the-gdpr-application' },
-  { e: true, n: 'who the gdpr applies to', id: 'who-the-gdpr-applies-to' },
-  { e: true, n: 'how the gdpr works', id: 'how-the-gdpr-works' },
-  { e: true, n: 'the main gdpr principles', id: 'the-main-gdpr-principles' },
-  { e: true, n: 'data theft and the gdpr', id: 'data-theft-and-the-gdpr' },
-  { e: true, n: 'data protection law', id: 'data-protection-law' },
-  { e: true, n: 'is my business ready for gdpr', id: 'is-my-business-ready-for-gdpr' },
-  { e: true, n: 'what you need to do to be gdpr compliant', id: 'what-you-need-to-do-to-be-gdpr-compliant' },
-  { e: true, n: 'review your documentation', id: 'review-your-documentation' },
-  { e: true, n: 'gdpr policies', id: 'gdpr-policies' },
-  { e: true, n: 'process mappings', id: 'process-mappings' },
-  { e: true, n: 'gdpr procedures', id: 'gdpr-procedures' },
-  { e: true, n: 'subject access request form', id: 'subject-access-request-form' },
-  { e: true, n: 'ddat right to be forgotten', id: 'ddat-right-to-be-forgotten' },
-  { e: true, n: 'privacy notice gdpr', id: 'privacy-notice-gdpr' },
-  { e: true, n: 'privacy policy gdpr', id: 'privacy-policy-gdpr' },
-  { e: true, n: 'gdpr compliant body', id: 'gdpr-compliant-body' },
-  { e: true, n: 'lawful basis for processing', id: 'lawful-basis-for-processing' },
-  { e: true, n: 'how to create a lawful basis', id: 'how-to-create-a-lawful-basis' },
-  { e: true, n: 'lawful basis document', id: 'lawful-basis-document' },
-  { e: true, n: 'before you start', id: 'before-you-start' },
-  { e: true, n: 'new clients', id: 'new-clients' },
-  { e: true, n: 'work with you', id: 'work-with-you' },
-  { e: true, n: 'your business', id: 'your-business' },
-  { e: true, n: 'the software', id: 'the-software' },
-  { e: true, n: 'reports', id: 'reports' },
-  { e: true, n: 'epm software for job cost control', id: 'epm-software-for-job-cost-control' },
-  { e: true, n: 'project management basics', id: 'project-management-basics' },
-  { e: true, n: 'why setting up cost codes for projects is important', id: 'why-setting-up-cost-codes-for-projects-is-important' },
-  { e: true, n: 'project management software for independent construction professionals', id: 'project-management-software-for-independent-construction-professionals' },
-  { e: true, n: 'how to keep projects profitable', id: 'how-to-keep-projects-profitable' },
-  { e: true, n: 'consultation', id: 'consultation' },
-  { e: true, n: 'streamline your business', id: 'streamline-your-business' },
-  { e: true, n: 'manage your team better', id: 'manage-your-team-better' },
-  { e: true, n: 'micro-credential enquiry', id: 'micro-credential-enquiry' },
-  { e: true, n: 'safegaurd your future', id: 'safegaurd-your-future' },
-  { e: true, n: 'corporate training', id: 'corporate-training' },
-  { e: true, n: 'corporate enquiry', id: 'corporate-enquiry' },
-  { e: true, n: 'prepare for your future', id: 'prepare-for-your-future' },
-  { e: true, n: 'discover your pathway', id: 'discover-your-pathway' },
-  { e: true, n: 'all micro-credentials', id: 'all-micro-credentials' },
-  { e: true, n: 'q&a', id: 'q&a' },
-  { e: true, n: 'submit enquiry', id: 'submit-enquiry' },
-  { e: true, n: 'enquire', id: 'enquire' },
-  { e: true, n: 'your choices', id: 'your-choices' },
-  { e: true, n: 'your details', id: 'your-details' },
-  { e: true, n: 'submit', id: 'submit' },
-],
-  u = new URLSearchParams(window.location.search).get('q');
-  if (!u) return;
-  const o = r.find(e => e.id === u);
-  if (!o) return;
-  const n = document.getElementById('faq-article');
-  if (!n) return;
-  const { s: c, a: t } = q();
-  n.innerHTML = `
-<div class="p-8 bg-neutral-100 md:max-w-content">
-  <h1 class="text-3xl md:text-4xl font-semibold md:tracking-tight text-neutral-800">${o.n}</h1>
-  ${c()}
-  ${t()}
-</div>`;
-  const v = l('article', ...[...o.e ? [o.e] : []]);
-  n.appendChild(v);
-  const i = window.location;
-  const m = u,
-    h = i.pathname + '?q=' + m;
-  if (e() && d()) {
-    g(h);
-    w(h);
-  }
-},
-function graphqlFetcher(e, o) {
-  return fetch(e, {
-    body: JSON.stringify(o),
-    headers: { 'Content-Type': 'application/json' },
-    method: 'POST',
-  }).then(e => e.json());
-},
-function b() {
-  g.setHeader('x-storefront-mutation-token', JSON.stringify({ next: 'force', ts: new Date().getTime() }));
-},
-function x() {
-  g.setHeader('x-storefront-mutation-token', '{}');
-},
-g.on('request', b);
-g.on('response', 'error', x);
-w.on('request', b);
-w.on('response', 'error', x);
-w.on('response', 302, e => {
-  const o = e.headers.get('location');
-  const n = new URL(o, window.location.href);
-  const c = n.searchParams.get('code');
+/**
+ * Project image map.
+ *
+ * A single source of truth for the public image that belongs to each project
+ * slug. The archive row and project pages read from here so the checker can
+ * validate that the referenced file actually exists.
+ */
+
+export const projectImages: Record<string, string> = {
+  telecloud: '/images/telecloud.jpg',
+  formivo: '/images/formivo.png',
+  devpass: '/images/devpass.png',
+  pasteLinkPro: '/images/paste-link-pro.png',
+  slik: '/images/slik.png',
+  webTemplateHub: '/images/web-template-hub.png',
+  clinicflow: '/images/clinicflow.png',
+  mealmint: '/images/mealmint.png',
+  promptAudit: '/images/promptaudit.jpg',
+  quizspark: '/images/quizspark.png',
+  buildlayout: '/images/buildlayout.png',
+  prodspark: '/images/prodspark.png',
+  openformio: '/images/openformio.png',
+}
+
+export function projectImageFor(slug: string): string | undefined {
+  return projectImages[slug]
+}
