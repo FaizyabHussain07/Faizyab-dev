@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+  Sitemap for Faizyab Hussain — AI-Focused Developer & Product Builder
+  Generated for SEO, AEO, and GEO optimization.
+  Last updated: 2026-10-22
+-->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+                            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+
+  <!-- Home Page — highest priority, most frequent change -->
+  <url>
+    <loc>https://www.faizyab.me/</loc>
+    <lastmod>2026-10-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="canonical" href="https://www.faizyab.me/" xmlns:xhtml="http://www.w3.org/1999/xhtml"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.faizyab.me/" xmlns:xhtml="http://www.w3.org/1999/xhtml"/>
+  </url>
+
+  <!-- About Page -->
+  <url>
+    <loc>https://www.faizyab.me/about</loc>
+    <lastmod>2026-10-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="canonical" href="https://www.faizyab.me/about" xmlns:xhtml="http://www.w3.org/1999/xhtml"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.faizyab.me/about" xmlns:xhtml="http://www.w3.org/1999/xhtml"/>
+  </url>
+
+  <!-- Contact Page -->
+  <url>
+    <loc>https://www.faizyab.me/contact</loc>
+    <lastmod>2026-10-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="canonical" href="https://www.faizyab.me/contact" xmlns:xhtml="http://www.w3.org/1999/xhtml"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.faizyab.me/contact" xmlns:xhtml="http://www.w3.org/1999/xhtml"/>
+  </url>
+
+  <!-- Services Page — important for service-based queries -->
+  <url>
+    <loc>https://www.faizyab.me/services</loc>
+    <lastmod>2026-10-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="canonical" href="https://www.faizyab.me/services" xmlns:xhtml="http://www.w3.org/1999/xhtml"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.faizyab.me/services" xmlns:xhtml="http://www.w3.org/1999/xhtml"/>
+  </url>
+
+  <!-- Projects Archive -->
+  <url>
+    <loc>https://www.faizyab.me/projects</loc>
+    <lastmod>2026-10-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="canonical" href="https://www.faizyab.me/projects" xmlns:xhtml="http://www.w3.org/1999/xhtml"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.faizyab.me/projects" xmlns:xhtml="http://www.w3.org/1999/xhtml"/>
+  </url>
+
+  <!-- Work / Experience Page -->
+  <url>
+    <loc>https://www.faizyab.me/work</loc>
+    <lastmod>2026-10-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="canonical" href="https://www.faizyab.me/work" xmlns:xhtml="http://www.w3.org/1999/xhtml"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.faizyab.me/work" xmlns:xhtml="http://www.w3.org/1999/xhtml"/>
+  </url>
+
+  <!-- Writing / Blog Page -->
+  <url>
+    <loc>https://www.faizyab.me/writing</loc>
+    <lastmod>2026-10-22</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="canonical" href="https://www.faizyab.me/writing" xmlns:xhtml="http://www.w3.org/1999/xhtml"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.faizyab.me/writing" xmlns:xhtml="http://www.w3.org/1999/xhtml"/>
+  </url>
+
+  <!-- Now Page — about current focus -->
+  <url>
+    <loc>https://www.faizyab.me/now</loc>
+    <lastmod>2026-10-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="canonical" href="https://www.faizyab.me/now" xmlns:xhtml="http://www.w3.org/1999/xhtml"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.faizyab.me/now" xmlns:xhtml="http://www.w3.org/1999/xhtml"/>
+  </url>
+
+  <!-- Uses Page — tools and tech stack -->
+  <url>
+    <loc>https://www.faizyab.me/uses</loc>
+    <lastmod>2026-10-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="canonical" href="https://www.faizyab.me/uses" xmlns:xhtml="http://www.w3.org/1999/xhtml"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.faizyab.me/uses" xmlns:xhtml="http://www.w3.org/1999/xhtml"/>
+  </url>
+
+  <!-- Individual Project Pages -->
+  <url>
+    <loc>https://www.faizyab.me/projects/telecloud</loc>
+    <lastmod>2026-10-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="canonical" href="https://www.faizyab.me/projects/telecloud" xmlns:xhtml="http://www.w3.org/1999/xhtml"/>
+  </url>
+
+  <url>
+    <loc>https://www.faizyab.me/projects/formivo</loc>
+    <lastmod>2026-10-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="canonical" href="https://www.faizyab.me/projects/formivo" xmlns:xhtml="http://www.w3.org/1999/xhtml"/>
+  </url>
+
+  <url>
+    <loc>https://www.faizyab.me/projects/pastelink-pro</loc>
+    <lastmod>2026-10-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="canonical" href="https://www.faizyab.me/projects/pastelink-pro" xmlns:xhtml="http://www.w3.org/1999/xhtml"/>
+  </url>
+
+  <url>
+    <loc>https://www.faizyab.me/projects/slik</loc>
+    <lastmod>2026-10-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="canonical" href="https://www.faizyab.me/projects/slik" xmlns:xhtml="http://www.w3.org/1999/xhtml"/>
+  </url>
+
+  <url>
+    <loc>https://www.faizyab.me/projects/promptaudit</loc>
+    <lastmod>2026-10-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="canonical" href="https://www.faizyab.me/projects/promptaudit" xmlns:xhtml="http://www.w3.org/1999/xhtml"/>
+  </url>
+
+  <!-- RSS Feed — important for content discovery -->
+  <url>
+    <loc>https://www.faizyab.me/rss.xml</loc>
+    <lastmod>2026-10-22</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+</urlset>

@@ -1,0 +1,80 @@
+/*
+  HUMANS.TXT - A standard file to acknowledge the people behind a website.
+  Learn more at http://humanstxt.org/
+
+  Website: https://faizyab.dev
+  Updated: 2026-10-22
+*/
+
+/* TEAM */
+
+/* Greetings */
+  My name is Faizyab Hussain. I am the creator, developer, and maintainer
+  of this personal website and digital archive.
+
+/* Role */
+  Developer, Writer, Designer (occasionally)
+
+/* Location */
+  Karachi, Pakistan
+
+/* Site */
+  Title: Faizyab Hussain — AI-Focused Developer & Product Builder
+  Description: Personal website and digital archive documenting the software
+  I have built, the things I have written, and what I am learning along the way.
+  URL: https://www.faizyab.me
+
+/* TECHNOLOGY */
+
+/* Platform */
+  Next.js 16.4.2
+  React 19
+  TypeScript
+  Tailwind CSS
+
+/* Fonts */
+  Inter (sans-serif body text)
+  Newsreader (serif headings)
+  JetBrains Mono (mono space)
+
+/* Design */
+  Design system: Editorial palette with warm paper background
+  Color scheme: Light mode (paper, ink, ink-secondary, ink-muted, rule, surface, link)
+  Design tokens defined in styles/globals.css
+
+/* TOOLS */
+
+/* Development */
+  VS Code
+  Git
+  GitHub
+  npm / Node.js
+  Next.js Dev Tools
+
+/* Deployment */
+  Vercel (or equivalent platform)
+
+/* Content */
+  MDX for writing and content
+  FormSubmit for contact form
+  JSON-LD for structured data
+
+/* THANKS */
+
+/* Inspiration */
+  A personal archive approach to web presence — keeping a record rather than
+  building a showcase. The idea of writing down what you learn rather than
+  pretending you know it.
+
+/* Special thanks */
+  Anyone who reads the writing, builds alongside, or sends a thoughtful email.
+  Every project on this site was built by learning from things that did not work
+  first.
+
+/* SIGNATURE */
+
+/* If you want to contact me */
+  Email: faizyabdev@gmail.com
+  GitHub: https://github.com/FaizyabHussain07
+  LinkedIn: https://www.linkedin.com/in/faizyabhussain
+  X: https://x.com/FaizyabHus74391

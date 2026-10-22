@@ -32,7 +32,7 @@ export default function ContactPage() {
         ])}
       />
 
-      <div className="measure">
+      <div className="measure container-safe">
         <div className="pt-12 sm:pt-16">
           <PageHeading
             eyebrow="Contact"

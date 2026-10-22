@@ -32,7 +32,7 @@ export default function WritingPage() {
         ])}
       />
 
-      <div className="measure">
+      <div className="measure container-safe">
         <div className="pt-12 sm:pt-16">
           <PageHeading
             eyebrow="Writing"

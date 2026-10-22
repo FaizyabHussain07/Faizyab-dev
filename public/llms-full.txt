@@ -1,0 +1,693 @@
+# Faizyab Hussain — Complete Website Content (llms-full.txt)
+
+> This file contains the full textual content of faizyab.dev for optimal
+> indexing by AI answer engines, LLMs, and generative search systems.
+> Last updated: 2026-10-22
+
+---
+
+## SITE OVERVIEW
+
+Faizyab Hussain is an AI-focused full-stack developer and independent product
+builder based in Karachi, Pakistan. He builds web products, developer tools,
+and AI-powered applications. He is interested in turning ideas into working
+software, learning through building, and writing down what he finds along the
+way. He is currently studying Artificial Intelligence at Dawood University of
+Engineering & Technology.
+
+---
+
+## HOME PAGE
+
+### Introduction
+
+**Name:** Faizyab Hussain
+**Role:** AI-Focused Full-Stack Developer
+**Location:** Karachi, Pakistan
+
+"I build web products, developer tools, and AI-powered applications. I'm
+interested in turning ideas into working software, learning through building,
+and writing down what I find along the way."
+
+### About
+
+"I'm a developer working across full-stack development and AI-powered
+applications, and I'm currently studying Artificial Intelligence at Dawood
+University of Engineering & Technology."
+
+"Most of what I know about building software, I learned by building it:
+shipping small products, reading a lot of code, and writing down what I found.
+This site is where I keep that record."
+
+### Selected Projects
+
+- **TeleCloud:** A personal cloud drive that keeps the file bytes inside your
+  own private Telegram channel. Status: In Development. 2026–2026.
+- **Formivo:** A developer-first form endpoint that turns submissions on
+  existing websites into a lead dashboard. Status: In Development. 2026–2026.
+- **PasteLink Pro:** A no-account text sharing tool with expiry, optional
+  password protection and burn-after-read. Status: Maintained. 2026–2026.
+- **Slik:** A CLI that scaffolds a full-stack SaaS starter with authentication,
+  a dashboard and an admin panel. Status: In Development. 2026–2026.
+- **PromptAudit:** An AI tool that audits a website for SEO, GEO and AEO and
+  generates the fix prompts for it. Status: Prototype.
+
+### Recent Writing
+
+1. "Hashing the password in the browser, and what that actually buys you"
+   — 18 October 2026 — Engineering notes · 4 min read
+   A look at the reasoning behind hashing a paste password client-side in
+   PasteLink Pro, and the honest limits of what that protects.
+
+2. "Static vs dynamic rendering in Next.js: choosing on purpose"
+   — 14 September 2026 — Guides · 3 min read
+   Static generation, server rendering and streaming compared: how Next.js
+   decides what to render, and how I choose per route on real projects.
+
+3. "How I built Formivo: a form endpoint for existing websites"
+   — 12 September 2026 — Build logs · 3 min read
+   A build log of Formivo: taking submissions from forms that already exist,
+   turning them into scoped leads, and the access-control decision that shaped
+   the backend.
+
+### Experience
+
+- **DevWeaveX — Full-Stack Developer | AI Product Builder**
+  Dec 2025 – Present
+  Building and shipping AI-powered SaaS products, developer tools, and
+  full-stack web applications from idea to production. Owning product
+  development end-to-end across frontend, backend, databases, authentication,
+  deployment, and user-driven iteration.
+
+- **Kohaq — Web Dev Intern**
+  Aug 2025 – Oct 2025
+  Contributed to frontend and backend development tasks using HTML, CSS,
+  JavaScript, React, and Git within a collaborative environment.
+
+- **Self-Employed — Full-Stack Developer**
+  Sep 2024 – Jul 2025
+  Designed and shipped responsive websites, dashboards, and full-stack web
+  applications for clients and personal projects, owning projects from
+  requirements and UI development through backend, deployment, SEO, and
+  performance optimization.
+
+- **Faizyab Al-Quran — Platform Developer**
+  Jul 2024 – Oct 2025
+  Designed and developed an online learning platform for Quranic and academic
+  education, with responsive user interfaces and student management features.
+
+---
+
+## ABOUT PAGE
+
+### How I got here, and where I am now
+
+I am based in Karachi, Pakistan, and I build software for a living. My work
+sits between full-stack development and AI-powered applications: web products,
+developer tools, and the occasional experiment that exists mostly to find out
+whether an idea is worth pursuing.
+
+I did not come to this through a computer science degree. I came to it through
+a training programme, a lot of small projects, and a habit of writing things
+down. What started as wanting to build websites has turned into wanting to
+understand how products are built properly, not just how to make them work.
+
+### My path into web development
+
+I spent September 2024 through January 2026 training in Web & App Development
+at SMIT. That covered the interface, the server, the database, and the parts
+of the job that tutorials usually skip: deployment, debugging, and the
+discipline of finishing something.
+
+The training gave me the vocabulary. The projects gave me the practice. Most of
+what I know now, I know because I built something that did not work, found out
+why, and fixed it.
+
+### Learning and technical development
+
+I learned to work in plain HTML, CSS and JavaScript first, without a framework,
+and I think that was the right order. It meant the framework was a choice
+rather than a default. Since then I have moved through React, Next.js and
+Tailwind CSS, Node.js and Express, and a range of databases: mostly Supabase
+and PostgreSQL, and Firebase when the data model is small and the rules are
+simple.
+
+I am more interested in the parts of software that stay hard: authentication,
+data modelling, permissions, and the unglamorous work of making a product
+usable rather than merely functional.
+
+### Moving into AI and product development
+
+In 2026 I started a BS in Artificial Intelligence at Dawood University of
+Engineering & Technology. The degree is in progress; I am studying it alongside
+the work, not instead of it.
+
+What I am drawn to in AI is application work: integrating existing models into
+products and workflows that are genuinely useful, rather than training models
+from scratch. I am interested in how model-backed features should be designed,
+how they fail, and how to evaluate them. PromptAudit is my attempt to work on
+that in practice.
+
+### Independent building
+
+Most of what is in the project archive I built on my own. I started with
+independent full-stack work in September 2024 and it has continued since: web
+applications, developer tools, and product ideas across form handling, secure
+text sharing, file storage, developer tooling, and AI-assisted workflows.
+
+Building alone teaches you the parts of the job that a tutorial never mentions:
+what a user actually does with a form, what breaks when an API is slow, why a
+settings screen needs to exist, and how much of a plan survives contact with a
+real deployment.
+
+### What I am currently learning
+
+AI engineering and agentic patterns. LLM application development, and how to
+evaluate a model-backed feature rather than guessing whether it is good. Backend
+and SaaS architecture, especially the parts that only appear once other people
+are using the thing. And product engineering: the craft of making software that
+people can actually use.
+
+The now page has a more current version of this list.
+
+### Interests
+
+Software engineering and artificial intelligence, obviously. Beyond that:
+full-stack web development, developer tools, SaaS products, indie building,
+product design and usability, open-source software, and entrepreneurship. I
+care about build-in-public practices and about technical writing as a way to
+actually learn something rather than skim it.
+
+I am also interested in the relationship between technology and opportunity:
+education, access, and the idea that building something useful is a reasonable
+way to contribute. I describe that interest as social entrepreneurship, though
+I am careful about the word: I do not run a registered social enterprise and I
+would rather not imply impact I have not measured.
+
+### Where to go next
+
+The work page has the full professional history, including the parts that are
+still in progress. The project archive is the most complete picture of what I
+have built. And writing is where I write down the things I learn along the way.
+
+If any of that is interesting, or if you are working on something in a similar
+direction, get in touch and we can talk.
+
+### Elsewhere
+
+- GitHub: FaizyabHussain07
+- LinkedIn: faizyabhussain
+- X: FaizyabHus74391
+- Email: faizyabdev@gmail.com
+
+---
+
+## SERVICES PAGE
+
+### What I can build for you
+
+AI products, full-stack apps, SaaS, business systems, websites. Every engagement
+ends with something deployed and usable, not a prototype.
+
+### AI Product Development
+
+I build AI-powered applications, SaaS products and intelligent workflows from
+concept to deployment. Whether you need a standalone AI product or AI features
+integrated into an existing system, I handle the full development lifecycle:
+data pipeline design, frontend interfaces and API architecture.
+
+**Who it is for:** Founders building AI products, SaaS companies adding AI
+features, businesses looking to automate with AI.
+**What to expect:** A production-ready AI application built with modern
+frameworks, designed for real users and real data.
+
+### Full-Stack Web Development
+
+Complete web applications built with modern frameworks, from frontend interfaces
+to backend APIs, databases, authentication and deployment. Every application is
+production-ready, tested and built with scalability in mind.
+
+**Who it is for:** Businesses needing custom web applications, startups building
+their first product, teams needing internal tools.
+**What to expect:** A complete application with frontend, backend, database,
+authentication and deployment, ready for users.
+
+### SaaS Development
+
+End-to-end SaaS product development, from initial concept and MVP to a
+production-ready application with authentication, billing, dashboards and
+analytics. Built with modern, scalable architectures that grow with your
+product.
+
+**Who it is for:** SaaS founders, startups with a product idea, businesses
+transitioning to subscription models.
+**What to expect:** A complete SaaS product with the core features needed to
+launch and start acquiring users.
+
+### AI Integration
+
+Enhance existing products with practical AI capabilities, from LLM-powered
+content generation to intelligent data processing and automated workflows. I
+focus on AI features that deliver genuine value, not just novelty.
+
+**Who it is for:** Existing products that could benefit from AI, businesses
+with data processing needs, teams wanting to automate workflows.
+**What to expect:** Practical AI features that improve your product and save
+your users time.
+
+### Business Systems
+
+When off-the-shelf software doesn't fit, I build custom business systems:
+CRM-style tools, booking platforms, internal dashboards and workflow
+applications tailored to your exact requirements.
+
+**Who it is for:** Businesses with unique workflows, clinics needing patient
+management, teams needing internal tools.
+**What to expect:** A custom-built system designed around your actual workflow,
+not forced into a generic template.
+
+### Modern Website Development
+
+Professional, responsive websites built for conversion. Whether you need a
+corporate site, a local business presence or a brand showcase, every site is
+fast, mobile-first and designed to turn visitors into customers.
+
+**Who it is for:** Businesses, startups, local brands, companies needing a
+professional web presence.
+**What to expect:** A fast, responsive, conversion-focused website that
+represents your brand professionally.
+
+### Website Redesign
+
+Modernize outdated websites with better UX, responsive design, performance and
+modern frameworks. I keep what works, rebuild what doesn't and ensure the result
+is faster, more professional and easier to maintain.
+
+**Who it is for:** Businesses with outdated websites, companies that have
+outgrown their current design, brands needing a refresh.
+**What to expect:** A modern, responsive redesign that improves user experience
+and performance while maintaining your brand.
+
+### Landing Pages
+
+High-quality landing pages for products, startups, campaigns and businesses.
+Focused on conversion, with clear messaging, strong CTAs and responsive design
+that works on every device.
+
+**Who it is for:** Product launches, marketing campaigns, startup MVPs, service
+promotion.
+**What to expect:** A focused, high-converting landing page built and deployed
+quickly.
+
+### FAQ
+
+**What services do you offer as a full-stack developer?**
+AI product development, full-stack web applications, SaaS product development,
+AI integration into existing products, custom business systems, modern website
+development, website redesigns and landing pages.
+
+**How do you start a project?**
+A short call or email thread to scope the problem, followed by a clear plan:
+what gets built, what it costs and when it ships. Work starts once the scope is
+agreed.
+
+**Do you work with startups and businesses?**
+Yes. Startups building a first product, SaaS companies adding AI features, and
+businesses that need custom software or a better website are all regular kinds
+of engagements.
+
+**Where are you based and do you work remotely?**
+I am based in Karachi, Pakistan and work remotely with clients anywhere.
+Communication happens over email, call or the tool your team already uses.
+
+---
+
+## WORK / EXPERIENCE PAGE
+
+### Experience and independent work
+
+A chronological record of the work I have done, with the different kinds of work
+kept separate: employment, internships, independent product work and business
+initiatives.
+
+### Professional history
+
+- **DevWeaveX — Full-Stack Developer | AI Product Builder**
+  Dec 2025 – Present
+  Building and shipping AI-powered SaaS products, developer tools, and
+  full-stack web applications from idea to production. Owning product
+  development end-to-end across frontend, backend, databases, authentication,
+  deployment, and user-driven iteration.
+
+- **Kohaq — Web Dev Intern**
+  Aug 2025 – Oct 2025
+  Contributed to frontend and backend development tasks using HTML, CSS,
+  JavaScript, React, and Git within a collaborative environment.
+
+- **Self-Employed — Full-Stack Developer**
+  Sep 2024 – Jul 2025
+  Designed and shipped responsive websites, dashboards, and full-stack web
+  applications for clients and personal projects, owning projects from
+  requirements and UI development through backend, deployment, SEO, and
+  performance optimization.
+
+- **Faizyab Al-Quran — Platform Developer**
+  Jul 2024 – Oct 2025
+  Designed and developed an online learning platform for Quranic and academic
+  education, with responsive user interfaces and student management features.
+
+### Services I have worked toward offering
+
+Alongside my own products, I have worked toward offering development services to
+businesses. This is an area I am still forming, so I am not listing packages or
+prices here. If you are looking for something specific, get in touch and we can
+work it out.
+
+- Business websites and responsive web development
+- Website redesigns and landing pages
+- Custom web applications and full-stack development
+- AI-powered web experiences and AI API integration
+- Basic technical SEO implementation
+
+---
+
+## WRITING / BLOG POSTS
+
+### Hashing the password in the browser, and what that actually buys you
+
+18 October 2026 · Engineering notes · 4 min read
+
+A look at the reasoning behind hashing a paste password client-side in
+PasteLink Pro, and the honest limits of what that protects.
+
+tags: security, paste, cryptography, product
+
+### Static vs dynamic rendering in Next.js: choosing on purpose
+
+14 September 2026 · Guides · 3 min read
+
+Static generation, server rendering and streaming compared: how Next.js decides
+what to render, and how I choose per route on real projects.
+
+tags: nextjs, react, rendering, performance
+
+### How I built Formivo: a form endpoint for existing websites
+
+12 September 2026 · Build logs · 3 min read
+
+A build log of Formivo: taking submissions from forms that already exist, turning
+them into scoped leads, and the access-control decision that shaped the backend.
+
+tags: formivo, build-log, backend, access-control
+
+---
+
+## PROJECT DETAILS
+
+### TeleCloud
+
+**Category:** Product · Also known as: TeleCloud
+**Status:** In Development
+**Started:** 2026
+**Role:** Creator, Full-Stack Developer
+
+A personal cloud drive that keeps the file bytes inside your own private Telegram
+channel.
+
+**Technologies:** Telegram Bot API, Cloud Storage, Web App
+
+**Problem:** Cloud storage usually means trusting a third party with your file
+bytes. For sensitive or private files, that is the point of friction.
+
+**Goals:**
+- Keep file bytes inside a user's own Telegram channel
+- Provide a familiar cloud drive interface
+- Minimize third-party data exposure
+
+**My contribution:** Designed and building the full product: the Telegram bot
+integration, the web interface, and the storage layer that keeps everything
+inside the user's own space.
+
+**Implementation:** Using Telegram's bot API as the storage and sync layer,
+with a custom web app on top for the drive experience.
+
+**Challenges:**
+- Telegram's file handling limits and how they interact with a cloud-drive UX
+- Sync conflict resolution when the same file is touched from multiple devices
+- Keeping the experience simple enough that it feels like a drive, not a bot
+
+**Results:**
+- Working prototype with file upload, list, and download through Telegram
+- Web interface that mirrors the drive metaphor
+
+**Lessons:**
+- The hardest part is not the storage, it is the mental model: users expect a
+  drive, and a bot API does not naturally provide one.
+- Sync semantics matter more than storage semantics for this kind of product.
+
+---
+
+### Formivo
+
+**Category:** Developer Tool · Also known as: Formivo
+**Status:** In Development
+**Started:** 2026
+**Role:** Creator, Full-Stack Developer
+
+A developer-first form endpoint that turns submissions on existing websites into
+a lead dashboard.
+
+**Technologies:** API, Dashboard, Web App
+
+**Problem:** Adding a form to an existing site usually means wiring up a backend
+endpoint, an inbox, and some kind of lead tracking — or accepting a third-party
+form service that owns the data.
+
+**Goals:**
+- Give developers a drop-in form endpoint that already has a dashboard
+- Turn raw form submissions into scoped, filterable leads
+- Keep the access-control model simple enough that a single developer can trust
+  it with real submissions
+
+**My contribution:** Built the form endpoint, the lead-ingest pipeline, and the
+dashboard. The access-control decision — scoping leads by form, with clear
+ownership — shaped the backend more than anything else.
+
+**Implementation:**
+- Form endpoint that accepts POST submissions and validates them
+- Lead model that scopes submissions by form and adds metadata
+- Dashboard that lets the form owner view, filter, and export leads
+- Access control that makes sure a submission only appears to the right owner
+
+**Challenges:**
+- Deciding what "owned by" means for a form that might be embedded on many sites
+- Keeping the inbox useful without becoming a full CRM
+- Handling spam and low-quality submissions without making every form owner
+  configure anti-spam
+
+**Results:**
+- Working form endpoint with a real dashboard
+- Lead-scoping model that keeps submissions isolated by form
+
+**Lessons:**
+- The access-control decision is not a detail, it is the product. Get it wrong
+  and the dashboard is useless because trust is broken.
+- A form endpoint is not interesting on its own; the dashboard is what makes it
+  worth using.
+
+---
+
+### PasteLink Pro
+
+**Category:** Product · Also known as: PasteLink Pro
+**Status:** Maintained
+**Started:** 2026
+**Role:** Creator, Full-Stack Developer
+
+A no-account text sharing tool with expiry, optional password protection and
+burn-after-read.
+
+**Technologies:** Web App, Cryptography, Storage
+
+**Problem:** Quickly sharing a snippet of text or a small file usually means
+pasting it into some service and hoping the link is not archived, indexed, or
+left live longer than intended.
+
+**Goals:**
+- Make sharing a snippet as fast as possible
+- Add expiry and optional password protection so the creator has control
+- Support burn-after-read so a link disappears after the first open
+- Keep the product usable without an account
+
+**My contribution:** Built the full product: the paste creation flow, the
+storage and expiry model, the password protection path, and the burn-after-read
+semantics.
+
+**Implementation:**
+- Paste creation with optional expiry, password, and burn-after-read flags
+- Password hashing done client-side, so the server never sees the plaintext
+  password (see the write-up on what that actually buys you)
+- Expiry as a background process, not a per-request check that blocks reads
+- Burn-after-read as a state transition that happens on the first successful
+  read
+
+**Challenges:**
+- Choosing what client-side password hashing actually protects, and being honest
+  about what it does not
+- Making burn-after-read feel reliable without making it impossible to recover
+  from a bad click
+- Keeping the no-account experience fast while still storing enough metadata to
+  make expiry and stats useful
+
+**Results:**
+- Working product with expiry, password protection, and burn-after-read
+- Client-side password hashing for paste access
+- Maintained and used
+
+**Lessons:**
+- Client-side password hashing is useful, but it is not a substitute for
+  transport security or server-side access control.
+- Burn-after-read is a feature people ask for more than you expect, and the
+  implementation has to be forgiving of real-world use.
+
+---
+
+### Slik
+
+**Category:** Developer Tool · Also known as: Slik
+**Status:** In Development
+**Started:** 2026
+**Role:** Creator, Full-Stack Developer
+
+A CLI that scaffolds a full-stack SaaS starter with authentication, a dashboard
+and an admin panel.
+
+**Technologies:** CLI, SaaS Starter, Web App
+
+**Problem:** Starting a SaaS from scratch means making a lot of the same
+decisions every time: auth, dashboard layout, admin panel, billing hooks, and
+the boring glue around them.
+
+**Goals:**
+- Scaffold a usable full-stack SaaS starter in one command
+- Include authentication, a dashboard, and an admin panel by default
+- Make the starter something a developer can build on rather than something they
+  have to undo
+
+**My contribution:** Designed the scaffold template and the CLI that generates
+it, with a focus on what a real SaaS needs on day one rather than a demo.
+
+**Implementation:**
+- CLI that generates a full-stack project with auth, a dashboard, and an admin
+  panel
+- Template choices that reflect a real SaaS baseline rather than a toy app
+- Room to add billing, email, and other SaaS-adjacent pieces as needed
+
+**Challenges:**
+- Picking defaults that are useful without being opinionated enough to get in
+  the way
+- Keeping the generated project readable and editable, not a black box
+- Balancing completeness with simplicity: too much included and it feels heavy,
+  too little and it is not useful
+
+**Results:**
+- Working CLI with a real SaaS starter template
+- Auth, dashboard, and admin panel included
+
+**Lessons:**
+- The best scaffold is the one someone actually extends. That means readable
+  generated code and a clear seam between the starter and the custom work.
+- A SaaS starter is not a SaaS. It is the part of the SaaS that is the same
+  every time.
+
+---
+
+### PromptAudit
+
+**Category:** AI Tool · Also known as: PromptAudit
+**Status:** Prototype
+**Started:** 2026
+**Role:** Creator, AI Product Builder
+
+An AI tool that audits a website for SEO, GEO and AEO and generates the fix
+prompts for it.
+
+**Technologies:** AI, LLM, Web App, SEO, GEO, AEO
+
+**Problem:** Websites can be technically sound and still be invisible to answer
+engines, generative search, and AI assistants that summarize rather than link.
+Traditional SEO tooling does not cover that gap well.
+
+**Goals:**
+- Audit a website for SEO, GEO, and AEO in one place
+- Produce fixes that are specific enough to act on
+- Generate the prompts that would guide an AI assistant or a developer toward
+  those fixes
+
+**My contribution:** Designed the audit model and the prompt-generation path.
+This is a prototype, so the emphasis is on whether the idea is worth pursuing
+rather than on polishing a finished product.
+
+**Implementation:**
+- Audit that looks at SEO basics, GEO readiness, and AEO suitability
+- Output that includes both a human-readable summary and prompts that can be fed
+  back into an AI assistant for remediation
+- Focused on actionable output rather than a generic score
+
+**Challenges:**
+- Defining GEO and AEO in a way that is testable, not just marketing language
+- Making the prompts useful rather than generic
+- Not overpromising on what an audit can say before the site is actually
+  crawled and understood
+
+**Results:**
+- Prototype that audits and produces fix prompts
+- A working model for how SEO, GEO, and AEO can be evaluated together
+
+**Lessons:**
+- GEO and AEO are not the same as SEO, and treating them as synonyms produces
+  weak audits.
+- Prompt generation is only useful if the prompts are specific enough to act on.
+
+---
+
+## CONTACT PAGE
+
+### Get in touch
+
+I am always glad to hear from people building things, working on interesting
+problems, or simply wanting to compare notes. Email is the fastest way to reach
+me. If you would rather send a message through a form, there is one below.
+
+### Direct contacts
+
+- **Email:** faizyabdev@gmail.com
+- **LinkedIn:** faizyabhussain
+- **GitHub:** FaizyabHussain07
+- **X:** FaizyabHus74391
+- **Based in:** Karachi, Pakistan
+
+### Send a message
+
+If email feels like too much commitment for a first note, use the form below. It
+sends straight to my inbox through FormSubmit, so there is no separate sign-up.
+
+### What I am glad to talk about
+
+- Software projects, especially where AI is genuinely part of the product.
+- Full-stack and AI engineering work, in a team or as a collaborator.
+- Remote roles, internships and freelance engagements.
+- Reviewing a project, a piece of code, or an idea that needs a second opinion.
+- Anything about how I work, how I learn, or what I have built.
+
+### A note on this site
+
+It is a personal archive, not a business. The form sends to my inbox and only
+me. Nothing you write here is collected by a third party.
+
+---
+
+## END OF CONTENTS
+
+This file is a plain-text snapshot of faizyab.dev for AI/LLM indexing.
+For the full interactive site, visit https://www.faizyab.me/

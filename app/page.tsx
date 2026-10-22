@@ -20,6 +20,20 @@ export const metadata = buildMetadata({
   description:
     'Faizyab Hussain is a developer and independent product builder from Karachi, Pakistan, studying Artificial Intelligence and building web applications, developer tools, and AI-powered products.',
   path: '/',
+  openGraph: {
+    images: [
+      {
+        url: '/og-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'Faizyab Hussain — AI-Focused Developer & Product Builder',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    images: ['/og-image.png'],
+  },
 })
 
 export default function HomePage() {
@@ -37,7 +51,7 @@ export default function HomePage() {
         })}
       />
 
-      <div className="measure">
+      <div className="measure container-safe">
         {/* Section A: introduction */}
         <div className="py-12 sm:py-16">
           <Introduction />

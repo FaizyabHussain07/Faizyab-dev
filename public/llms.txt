@@ -1,0 +1,79 @@
+# Faizyab Hussain — AI-Focused Developer & Product Builder
+
+> Personal website and digital archive documenting the software I have built,
+> the things I have written, and what I am learning along the way.
+
+## Who
+
+- **Name:** Faizyab Hussain
+- **Location:** Karachi, Pakistan
+- **Role:** AI-Focused Full-Stack Developer & Independent Product Builder
+- **Education:** Studying Artificial Intelligence at Dawood University of
+  Engineering & Technology (BS in progress, started 2026)
+- **Experience:** Full-stack development since September 2024; training in
+  Web & App Development at SMIT (Sep 2024 – Jan 2026)
+- **Email:** faizyabdev@gmail.com
+
+## What I build
+
+AI-powered applications, full-stack web applications, SaaS products,
+developer tools, business systems, modern websites, and landing pages.
+I am based in Karachi, Pakistan and work remotely with clients anywhere.
+
+### Services
+
+- **AI Product Development:** From concept to deployment, including data
+  pipelines, frontend, backend, and API architecture.
+- **Full-Stack Web Development:** Frontend, backend, database, authentication,
+  and deployment — production-ready.
+- **SaaS Development:** End-to-end SaaS products with auth, billing,
+  dashboards, and analytics.
+- **AI Integration:** LLM-powered content generation, intelligent data
+  processing, automated workflows into existing products.
+- **Business Systems:** Custom CRM-style tools, booking platforms,
+  internal dashboards, workflow applications.
+- **Modern Website Development:** Responsive, conversion-focused websites.
+- **Website Redesign:** Modern UX, responsive design, performance,
+  modern frameworks.
+- **Landing Pages:** High-converting pages for products, campaigns,
+  startups.
+
+## Projects
+
+- **TeleCloud:** Personal cloud drive keeping file bytes inside a private
+  Telegram channel. In development.
+- **Formivo:** Developer-first form endpoint turning submissions into a
+  lead dashboard. In development.
+- **PasteLink Pro:** No-account text sharing with expiry, optional password
+  protection, and burn-after-read. Maintained.
+- **Slik:** CLI that scaffolds a full-stack SaaS starter with auth, dashboard,
+  and admin panel. In development.
+- **PromptAudit:** AI tool auditing websites for SEO, GEO, and AEO and
+  generating fix prompts. Prototype.
+
+## Writing topics
+
+Full-stack development, AI integration, security, shipping products,
+Next.js, React, Tailwind CSS, Node.js, Express, Supabase, PostgreSQL,
+Firebase, authentication, data modelling, permissions, prompt engineering,
+LLM application development, technical SEO, GEO, AEO.
+
+## Contact
+
+- **Email:** faizyabdev@gmail.com
+- **GitHub:** https://github.com/FaizyabHussain07
+- **LinkedIn:** https://www.linkedin.com/in/faizyabhussain
+- **X:** https://x.com/FaizyabHus74391
+
+## Links
+
+- Home: https://www.faizyab.me/
+- About: https://www.faizyab.me/about
+- Contact: https://www.faizyab.me/contact
+- Services: https://www.faizyab.me/services
+- Projects: https://www.faizyab.me/projects
+- Writing: https://www.faizyab.me/writing
+- Work: https://www.faizyab.me/work
+- Now: https://www.faizyab.me/now
+- Uses: https://www.faizyab.me/uses
+- RSS: https://www.faizyab.me/rss.xml

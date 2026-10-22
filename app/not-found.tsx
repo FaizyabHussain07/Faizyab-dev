@@ -4,7 +4,7 @@ import { navigation } from '@/data/navigation'
 
 export default function NotFound() {
   return (
-    <div className="measure">
+    <div className="measure container-safe">
       <div className="py-20 sm:py-28">
         <p className="eyebrow">404</p>
         <h1 className="mt-3 text-[2rem] leading-[1.15] tracking-[-0.015em] text-ink sm:text-[2.25rem]">

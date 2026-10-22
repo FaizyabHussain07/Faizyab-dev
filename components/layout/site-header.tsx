@@ -44,7 +44,7 @@ export function SiteHeader() {
 
   return (
     <header className="sticky top-0 z-40 border-b border-rule bg-paper">
-      <div className="measure flex h-14 items-center justify-between gap-4">
+      <div className="measure flex h-14 items-center justify-between gap-4 overflow-x-auto">
         <Link
           href="/"
           className="font-serif text-[1.0625rem] font-medium tracking-tight text-ink"

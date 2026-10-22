@@ -44,6 +44,9 @@ export const metadata: Metadata = {
     types: {
       'application/rss+xml': '/rss.xml',
     },
+    languages: {
+      en: '/',
+    },
   },
   openGraph: {
     type: 'website',
@@ -57,15 +60,30 @@ export const metadata: Metadata = {
         url: '/og-image.png',
         width: 1200,
         height: 630,
-        alt: `${SITE.name} · ${SITE.title}`,
+        alt: `${SITE.name} — ${SITE.title}`,
+        type: 'image/png',
       },
     ],
+    siteName: SITE.name,
   },
   twitter: {
     card: 'summary_large_image',
     title: SITE.title,
     description: SITE.description,
     images: ['/og-image.png'],
+    creator: SITE.author,
+    site: SITE_URL.replace('https://', ''),
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
   },
   icons: {
     icon: [
@@ -103,7 +121,7 @@ export default function RootLayout({
 
         <div className="flex min-h-screen flex-col">
           <SiteHeader />
-          <main id="main" className="flex-1">
+          <main id="main" className="flex-1 container-safe">
             {children}
           </main>
           <SiteFooter />

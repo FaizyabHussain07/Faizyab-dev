@@ -141,7 +141,7 @@ export default function ServicesPage() {
       />
       <JsonLd data={faqSchema(faqs)} />
 
-      <div className="measure">
+      <div className="measure container-safe">
         <div className="pt-12 sm:pt-16">
           <PageHeading
             eyebrow="Services"

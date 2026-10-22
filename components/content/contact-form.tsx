@@ -292,7 +292,7 @@ export function ContactForm() {
         </p>
       ) : null}
 
-      <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
+      <div className="flex flex-col items-center gap-3 sm:flex-row sm:items-center">
         <button
           type="submit"
           disabled={state.sending}

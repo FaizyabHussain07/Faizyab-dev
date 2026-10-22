@@ -1,0 +1,62 @@
+# robots.txt for Faizyab Hussain — AI-Focused Developer & Product Builder
+# Optimized for SEO, AEO (Answer Engine Optimization), and GEO (Generative Engine Optimization)
+
+# Allow all crawlers to access the site
+User-agent: *
+Allow: /
+
+# Primary content pages — highest priority for crawling and indexing
+Sitemap: https://www.faizyab.me/sitemap.xml
+
+# AI/LLM crawlers — grant broad access for answer engine and generative engine indexing
+User-agent: GPTBot
+Allow: /
+Crawl-delay: 2
+
+User-agent: ChatGPT-User
+Allow: /
+Crawl-delay: 2
+
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 2
+
+User-agent: BingPreview
+Allow: /
+
+User-agent: Meta-ExternalAgent
+Allow: /
+Crawl-delay: 2
+
+User-agent: Meta-InternalBot
+Allow: /
+
+User-agent: ai-searchbot
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+# Block low-value or duplicate content from indexing
+User-agent: *
+Disallow: /api/
+Disallow: /_next/
+Disallow: /static/
+Disallow: /server-sent-events
+
+# Allow JS and CSS for rendering (important for mobile-first indexing)
+User-agent: *
+Allow: /.well-known/
+
+# Security and privacy
+User-agent: *
+Disallow: /admin/
+Disallow: /private/
+Disallow: /internal/

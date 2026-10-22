@@ -85,7 +85,7 @@ export default async function ArticlePage({ params }: Params) {
         })}
       />
 
-      <article className="measure">
+      <article className="measure container-safe">
         <div className="pt-12 sm:pt-16">
           <p className="eyebrow">{article.category}</p>
 

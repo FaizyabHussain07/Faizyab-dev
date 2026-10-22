@@ -81,7 +81,7 @@ export default async function ProjectPage({ params }: Params) {
       />
       {appSchema ? <JsonLd data={appSchema} /> : null}
 
-      <article className="measure">
+      <article className="measure container-safe">
         <div className="pt-12 sm:pt-16">
           {heroImage ? (
             <div className="mb-8 overflow-hidden rounded-md border border-rule bg-surface">

@@ -16,7 +16,7 @@ export function SiteFooter() {
 
   return (
     <footer className="mt-20 border-t border-rule">
-      <div className="measure py-12">
+      <div className="measure py-12 overflow-x-auto">
         <div className="flex flex-col gap-10 sm:flex-row sm:justify-between">
           <div className="max-w-sm">
             <p className="font-serif text-lg text-ink">{profile.name}</p>

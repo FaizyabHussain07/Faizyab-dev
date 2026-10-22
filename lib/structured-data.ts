@@ -47,12 +47,17 @@ export function webSiteSchema() {
   return {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
-    '@id': `${SITE_URL}/#website`,
+    '@id': `${SITE_URL}#website`,
     url: SITE_URL,
     name: SITE.name,
     description: SITE.description,
     inLanguage: SITE.language,
-    publisher: { '@id': `${SITE_URL}/#person` },
+    publisher: { '@id': `${SITE_URL}#person` },
+    potentialAction: {
+      '@type': 'SearchAction',
+      target: { '@type': 'EntryPoint', urlTemplate: `${SITE_URL}/?q={search_term_string}` },
+      'query-input': 'required name=search_term_string',
+    },
   }
 }
 
@@ -72,8 +77,8 @@ export function webPageSchema({
     url: `${SITE_URL}${path}`,
     name,
     description,
-    isPartOf: { '@id': `${SITE_URL}/#website` },
-    about: { '@id': `${SITE_URL}/#person` },
+    isPartOf: { '@id': `${SITE_URL}#website` },
+    about: { '@id': `${SITE_URL}#person` },
     inLanguage: SITE.language,
   }
 }
