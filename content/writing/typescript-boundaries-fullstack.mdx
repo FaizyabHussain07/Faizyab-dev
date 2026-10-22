@@ -1,0 +1,57 @@
+---
+title: 'TypeScript boundaries in a full-stack app: where types stop being free'
+description: 'TypeScript guarantees end at runtime boundaries. How I keep types and validation in sync across forms, APIs and files, and the pattern that stopped drift.'
+date: '2026-09-06'
+category: 'Guides'
+tags:
+  - 'typescript'
+  - 'full-stack'
+  - 'validation'
+published: true
+slug: 'typescript-boundaries-fullstack'
+---
+
+TypeScript types are erased at runtime. Everything your compiler believes about a `User` object walks out of the database, across HTTP, and through JSON.parse as untyped data. This post is about the places where that gap bites, and the habit that closes it.
+
+## The three boundaries
+
+Every full-stack app has the same three. User input (forms, query params, uploads). Network input (your own APIs, third-party APIs). Storage (whatever shape the database actually returns). The mistake is validating only the first one because it is the one with a form attached.
+
+## One schema, two artifacts
+
+The pattern that stopped drift for me: define the schema once, derive both the runtime validator and the static type from it.
+
+```ts
+import { z } from 'zod'
+
+export const leadInput = z.object({
+  email: z.string().email(),
+  message: z.string().min(1).max(5000),
+})
+
+export type LeadInput = z.infer<typeof leadInput>
+```
+
+The form component imports `LeadInput` for its props, the API route calls `leadInput.safeParse(req.body)`, and there is exactly one place where "what a lead looks like" lives. When it changes, both sides fail to compile until they agree.
+
+## Validate at the edge, once
+
+The validation call belongs where the data enters your code, and only there. Validating inside every business-logic function is noise that hides the real rule. The route handler parses; everything downstream receives a typed value and can assume it.
+
+```ts
+const parsed = leadInput.safeParse(await req.json())
+if (!parsed.success) {
+  return Response.json({ error: parsed.error.flatten() }, { status: 422 })
+}
+// from here, parsed.data is LeadInput
+```
+
+## The type-only import trap
+
+With `verbatimModuleSyntax` on (this repo has it), importing a type with a normal `import` can survive into the bundle or fail the build. The discipline: `import type` for types, plain `import` for values. It sounds pedantic. It is the difference between a clean build and a mysterious runtime error about a schema that "does not exist."
+
+## What I would do differently
+
+I used to mirror API shapes by hand in a `types/api.ts` file, updating it second. It drifted constantly, and half the bugs I chased were two shapes that had quietly diverged. Deriving from the schema took the whole category away. The cost is a zod dependency at runtime, which has been worth it every time.
+
+Shared patterns like this are visible in the source of the projects on the [project archive](/projects).

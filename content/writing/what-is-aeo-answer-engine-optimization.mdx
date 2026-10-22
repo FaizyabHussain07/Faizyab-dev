@@ -1,0 +1,42 @@
+---
+title: 'AEO, GEO and LLMO: what they mean and what actually changes in your code'
+description: 'Answer engine optimization and generative engine optimization explained plainly, and an honest account of what changes in a real website when you optimize for AI answers.'
+date: '2026-09-04'
+category: 'Explainers'
+tags:
+  - 'seo'
+  - 'aeo'
+  - 'ai'
+published: true
+slug: 'aeo-gseo-llmo-explained'
+---
+
+The acronym shelf keeps growing: SEO, AEO (answer engine optimization), GEO (generative engine optimization), LLMO, AIO, whatever comes next. Most of it is old advice in new packaging. Here is what the terms mean and what actually changes when you act on them.
+
+## The terms
+
+**SEO** is optimizing so a search engine can crawl, index and rank your page. **AEO** is optimizing so an answer engine (the box that answers directly, or an AI assistant) can extract a correct answer from your page. **GEO** is the same goal aimed at generative search: being cited by a model that composes an answer from sources. **LLMO** is the community shorthand for optimizing so large language models mention or retrieve your content.
+
+For practical purposes AEO, GEO and LLMO are one discipline: make your page the easiest accurate source to quote.
+
+## What does not change
+
+Google has been explicit that its core SEO fundamentals apply to AI features as well: there are no extra technical requirements. Crawlable page, clear titles, accurate structured data, content written for people who have a real question. Pages that were thin and vague before AI will be thin and vague after it. There is no schema markup that buys you a mention.
+
+## What does change in the code
+
+Three concrete shifts, all of them visible in this site's source:
+
+1. **Write answer-shaped paragraphs.** Put a direct answer to the page's implied question early, in plain sentences, before the surrounding context. AI extractors lift complete statements, not fragments split across a decorative layout.
+2. **Mark up the Q&A honestly.** The [services page](/services) emits `FAQPage` JSON-LD for the questions it visibly answers. The markup mirrors what a reader sees. Inventing FAQs purely for markup is spam by any other name.
+3. **Keep entity facts consistent.** `Person`, `WebSite` and `BreadcrumbList` structured data with the same name, role and links everywhere, so an engine building a profile of you does not have to guess which fragment is right.
+
+## What I have not seen work
+
+Keyword-stuffed "People also ask" sections nobody reads. Hidden text. And the habit of rewriting finished posts every month just to bump the date: search engines warn against cosmetic freshness, and readers can smell it.
+
+## The honest summary
+
+Optimize for a reader who arrived with a specific question, answer it above the fold in one clean paragraph, mark up what is really on the page, and keep your facts consistent across the site. That is SEO, AEO and GEO simultaneously. The acronyms are marketing; the work is the same work.
+
+How this plays out on a full site is visible across the [project archive](/projects), where each entry states its status honestly rather than claiming finished work.

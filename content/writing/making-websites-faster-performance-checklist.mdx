@@ -1,0 +1,40 @@
+---
+title: 'Making websites faster: the checklist I run before calling a site done'
+description: 'A practical website performance checklist: measure on a mid-range phone, cut render-blocking JavaScript, right-size images, load fonts carefully, and fix the network waterfall.'
+date: '2026-08-26'
+category: 'Guides'
+tags:
+  - 'performance'
+  - 'core-web-vitals'
+  - 'frontend'
+published: true
+slug: 'website-performance-checklist'
+---
+
+"Fast" is not a feeling you get to claim; it is something a user on a mid-range Android phone over a mobile network experiences. This is the checklist I run before calling a site finished, roughly in the order that finds the most waste.
+
+## 1. Measure like the visitor
+
+DevTools throttled to a mid-speed CPU and a slow-4G profile, on the actual page, before any optimization. Largest contentful paint, cumulative layout shift, interaction to next paint. Optimizing without a before number is decoration; you cannot prove the change helped.
+
+## 2. Cut render-blocking JavaScript
+
+The most common finding, every time: components mounted on the client that render identical HTML on every visit. A filter that only hides rows does not need to be interactive until first click; a mobile menu can be a `<details>` element. Everything that moves to the server or gets deferred removes work from the critical path.
+
+## 3. Right-size images
+
+Serve modern formats with explicit dimensions so nothing shifts when it loads, and pick `sizes` honestly so a hero image does not ship a 2000-pixel file to a 360-pixel screen. Lazy-load everything below the fold; never lazy-load the actual LCP image, because delaying it delays the metric that matters most.
+
+## 4. Load fonts as carefully as text
+
+Each font family is a dependency of the first paint. Subset where possible, use `font-display: swap` so text never goes invisible, and preconnect to the origin if it is third-party. On this site three families ship because the serif display face is a deliberate design decision; more than a handful of weights of each would not have been.
+
+## 5. Fix the waterfall
+
+A sequence of dependent requests (HTML, then CSS, then a blocking script, then the data it fetches) multiplies every latency on the path. Flatten what you can: preload the hero asset, make independent fetches in parallel, and move anything session-independent above the fold that can be rendered at build time.
+
+## 6. Budget and stop
+
+Set a rough budget in kilobytes per route, watch it in CI, and treat exceeding it as a bug. The point of a budget is to end the argument early. Once the checklist passes on a real device profile, further micro-optimizing has better uses elsewhere.
+
+The sites in the [project archive](/projects) each got this pass before their case studies were written up.

@@ -1,0 +1,56 @@
+---
+title: 'Postgres schema design for a small SaaS: tenancy, roles and history'
+description: 'How I model a multi-tenant SaaS database in Postgres: tenant isolation with a single column, role checks that survive audits, and keeping an append-only history.'
+date: '2026-09-08'
+category: 'Guides'
+tags:
+  - 'postgresql'
+  - 'saas'
+  - 'databases'
+published: true
+slug: 'postgres-schema-for-multi-tenant-saas'
+---
+
+Schema design for a single-user app is easy: you get it wrong and fix it. Schema design for a SaaS is harder, because the tenant boundary is a promise you make before you have tenants. This is the shape I start from.
+
+## Tenancy is one column, until it is not
+
+The simplest correct model is `tenant_id` on every user-facing table. Not on some tables. Every one. The mistake I see most often is a table like `documents` with a tenant column, then a `document_shares` table that only has `document_id`, so sharing works correctly right up to the moment someone queries it directly and gets rows from another tenant.
+
+```sql
+create table documents (
+  id uuid primary key default gen_random_uuid(),
+  tenant_id uuid not null references tenants(id),
+  title text not null,
+  created_at timestamptz not null default now()
+);
+
+create index documents_tenant_idx on documents (tenant_id, created_at desc);
+```
+
+The composite index doubles as the pagination index for the tenant's own list, which is the query you will run most.
+
+## Roles live in a table, not in a JSON blob
+
+Role checks get cached, copied and eventually stapled onto a JWT where they can never be revoked. Store membership separately:
+
+```sql
+create table memberships (
+  tenant_id uuid not null references tenants(id),
+  user_id uuid not null references users(id),
+  role text not null check (role in ('owner','editor','viewer')),
+  primary key (tenant_id, user_id)
+);
+```
+
+Removing access is then a delete, not a token renewal race.
+
+## Keep an append-only history
+
+Product decisions will eventually require answering "what did this look like last Tuesday." A `updated_at` column cannot answer that. For anything a user would be surprised to lose, I keep an append-only event table: one row per change, who did it, when, and a JSONB snapshot of the change. It doubles as an audit log, and it is far cheaper to write at change time than to reconstruct later from nothing.
+
+## What I would do differently
+
+In an early project I used nullable tenant columns to allow "global" rows. Every query then needed `tenant_id is null or tenant_id = $1`, and every one of those was a place to get it wrong. A separate `scope = 'global'` column with a strict check would have been clearer. Fixed it later with a rewrite, which is the usual price of cleverness.
+
+More real schemas, with the code linked from each entry, are on the [project archive](/projects).

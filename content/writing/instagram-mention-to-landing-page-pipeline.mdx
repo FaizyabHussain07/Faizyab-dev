@@ -1,0 +1,43 @@
+---
+title: 'From an Instagram mention to a published landing page: the pipeline I want to build'
+description: 'A design-first build log: turning inbound Instagram mentions into draft landing pages automatically, the guardrails that make it safe, and why nothing ships without a human click.'
+date: '2026-09-02'
+category: 'Build logs'
+tags:
+  - 'automation'
+  - 'ai'
+  - 'webhooks'
+published: true
+slug: 'instagram-mention-landing-page-pipeline'
+---
+
+Here is a recurring situation: someone mentions me or a project on Instagram, and by the time I see it the moment has passed. I want a pipeline where a mention turns into a drafted landing page, queued for one human approval. This post is the design, written before a line of it exists, because the guardrails matter more than the plumbing.
+
+## The flow
+
+1. A webhook fires when the account is mentioned or tagged.
+2. The mention text goes to a static extractor: which project, what kind of request (a question, a collaboration, a feature ask).
+3. If it matches a project I run, a landing page draft is generated from that project's facts: name, one-line summary, problem, live link, a contact action.
+4. The draft lands in a review queue as a preview URL.
+5. Nothing is published until I open the preview and click approve.
+
+Five steps, and only the fourth is interesting.
+
+## Guardrails are the actual product
+
+Any pipeline that publishes automatically will eventually publish something wrong while I sleep. So the rules are strict:
+
+- **Only known content.** The draft is assembled from structured project facts, not invented by the model. Every sentence maps to a field I already published.
+- **One human between draft and live.** The queue is the feature. Auto-publishing "for speed" trades a five-second click for a public mistake with my name on it.
+- **Idempotency and rate limits.** The same mention processed twice creates one draft; a burst of mentions creates one batch, not twenty pages.
+- **A kill switch.** One flag turns the whole pipeline off, and it defaults to off.
+
+## Where AI fits, and where it does not
+
+The model's job is classification and phrasing within fixed facts: decide which project a mention is about, and adapt the tone. It does not get to decide what is true about the product, and it does not get to click publish. That split is the same lesson from every content tool I have built: the human supplies truth, the model supplies prose.
+
+## Status, honestly
+
+None of this is built yet. The webhook integration and the extractor prompt exist as notes; the review queue does not exist. I am writing it down now because the design is the difficult part, and because a build log written afterwards has a habit of pretending the plan was obvious all along.
+
+Related experiments and their real, current statuses live on the [project archive](/projects).

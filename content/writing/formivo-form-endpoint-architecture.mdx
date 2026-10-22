@@ -1,0 +1,65 @@
+---
+title: 'How I built Formivo: a form endpoint for existing websites'
+description: 'A build log of Formivo: taking submissions from forms that already exist, turning them into scoped leads, and the access-control decision that shaped the backend.'
+date: '2026-09-12'
+category: 'Build logs'
+tags:
+  - 'nextjs'
+  - 'postgresql'
+  - 'product'
+published: true
+slug: 'formivo-form-endpoint-architecture'
+---
+
+Almost every small business website has a contact form. Almost every one of them submits into an inbox that nobody opens. Rebuilding the form to fix that is expensive, so agencies skip it. Formivo works with the form that is already there.
+
+## The one-line pitch
+
+Point an existing form at a managed endpoint, and every submission arrives as a lead in a dashboard. HTML form, React form, WordPress, Webflow. One endpoint, one secret.
+
+```html
+<form action="https://api.formivo-three.vercel.app/v1/forms/{id}" method="POST">
+  <input type="hidden" name="_formivo_secret" value="••••" />
+  <!-- everything else stays exactly as it was -->
+</form>
+```
+
+No form rebuild, no bespoke backend, no SDK to install on the client's site.
+
+## Why not just use a forms service
+
+There is no shortage of form services. The gap I saw was in what happens *after* the submission. Most services give you an email and a spreadsheet-shaped export. Agencies and freelancers delivering sites to clients need a read-only view their client can open without seeing API configuration. That scoping problem is the product.
+
+## The access-control decision
+
+The interesting part was not ingestion. It was letting an invited client read only their own leads. I could have done that in application code: check the session, filter the rows, render the list. That works until someone adds a second query path and forgets the filter.
+
+Instead the rules went into the database. Supabase with Postgres row level security means the client's session is bound to a form scope at the connection level:
+
+```sql
+alter table leads enable row level security;
+
+create policy "clients read own leads"
+  on leads for select
+  using (
+    form_id in (
+      select form_id from client_grants where client_id = auth.uid()
+    )
+  );
+```
+
+Now there is no interface that can leak another client's rows, because the database refuses to return them. Multi-tenant access control is a database problem, not a UI problem. Deciding that early avoided a rewrite.
+
+## Ingestion without false rejects
+
+The endpoint accepts arbitrary third-party submissions. That means broken encodings, fields nobody documented, and the occasional bot. The rules I settled on: accept anything that parses as form data or JSON, require the secret, drop obvious honeypot hits, and never reject a submission just because it has extra fields. Guessing too hard about what a valid submission looks like is how you lose real leads.
+
+## What is live today
+
+The submission API and its documentation are public, and the dashboard works end to end. Client invitations are scoped server-side and only ever see their own rows. What is not built yet: usage analytics beyond counts, and a public self-serve signup. It is a product with a real backend, not a landing page.
+
+## What I learned
+
+Compatibility beats features. The strongest version of a tool like this is the one that asks the customer to change nothing. And the scoping rules belong in the database where they cannot be bypassed by accident.
+
+The rest of the archive, including the other products mentioned here, is on the [project archive](/projects).

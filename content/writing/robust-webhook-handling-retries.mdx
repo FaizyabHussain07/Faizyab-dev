@@ -1,0 +1,57 @@
+---
+title: 'Robust webhook handling: signatures, retries and idempotency'
+description: 'How to consume webhooks that survive the real world: verify signatures before parsing, make handlers idempotent, and treat retries as the normal case instead of the exception.'
+date: '2026-08-24'
+category: 'Guides'
+tags:
+  - 'webhooks'
+  - 'backend'
+  - 'reliability'
+published: true
+slug: 'robust-webhook-handling-retries'
+---
+
+Webhooks are a distributed-systems problem wearing a simple API's clothes. A provider will deliver a message twice, out of order, and sometimes with a fifty-minute delay, and your handler has to be correct on all three occasions. This is the shape I use.
+
+## Verify before you trust
+
+Signature verification has to happen on the raw body, before any JSON parsing rewrites it. Compute the HMAC over the exact bytes that arrived, compare in constant time, and reject anything unsigned or stale.
+
+```js
+const expected = hmac(secret, rawBody)
+if (!timingSafeEqual(expected, signature)) {
+  return new Response('bad signature', { status: 401 })
+}
+const event = JSON.parse(rawBody)
+```
+
+Note `rawBody`: if your framework has already parsed the body for you, you are comparing a signature against the wrong bytes, and you will not find out until an attacker does.
+
+## Assume every delivery is a retry
+
+Providers retry on timeout, and timeouts happen for boring reasons: a cold start, a database blip, a deploy halfway through. So treat every incoming event as potentially the second copy of one you already processed.
+
+The cheapest correct answer is a processed-events table with the provider's event id as the primary key:
+
+```sql
+create table webhook_events (
+  id text primary key,          -- provider event id
+  received_at timestamptz default now()
+);
+```
+
+Insert first, in the same transaction as your side effects. The insert either wins (do the work) or conflicts (return 200 immediately). Exactly-once effects, built from at-least-once delivery.
+
+## Return fast, work later
+
+If handler logic takes longer than a few seconds, accept the event, record it, and process it on a queue. Syncing with a slow worker is how you earn a retry storm: your slow handler plus their retry policy equals the same event six times. Acknowledge, enqueue, done.
+
+## Order is whatever the provider says it is
+
+Never assume events arrive in order. If event A (record deleted) can arrive after event B (record updated), either embed a monotonic version in the payload and discard stale ones, or make the handler state-convergent so the final state is correct regardless of arrival order. Pick deliberately, in the design, not during an incident.
+
+## What I would do differently
+
+My first webhook consumer verified signatures and nothing else. A duplicate delivery created a duplicate record, which was visible days later in a report nobody trusted for a while. Signatures keep attackers out; idempotency keeps the provider's own retries from being the incident. You need both, and the second one is the one people skip.
+
+Patterns like this are baked into the applications linked from the [project archive](/projects).

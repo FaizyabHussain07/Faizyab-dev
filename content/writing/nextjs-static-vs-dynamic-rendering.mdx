@@ -1,0 +1,79 @@
+---
+title: 'Static vs dynamic rendering in Next.js: choosing on purpose'
+description: 'Static generation, server rendering and streaming compared: how Next.js decides what to render, and how I choose per route on real projects.'
+date: '2026-09-14'
+category: 'Guides'
+tags:
+  - 'nextjs'
+  - 'rendering'
+  - 'performance'
+published: true
+slug: 'nextjs-static-vs-dynamic-rendering'
+---
+
+Next.js gives you several rendering strategies and the default is rarely the one you want forever. This is how I think about the choice, and what it costs when you get it wrong.
+
+## What Next.js actually decides
+
+Every route is rendered on the server. The question is *when*. Static generation renders at build time and serves the same HTML to everyone. Server rendering (dynamic) renders on each request. Streaming lets the server flush parts of the page as they become ready instead of blocking on the slowest data call.
+
+```ts
+// Static by default in the App Router
+export default async function Page() {
+  const data = await getPublishdPosts() // runs at build time
+  return <List items={data} />
+}
+```
+
+Adding one line changes the contract:
+
+```ts
+export const dynamic = 'force-dynamic' // render on every request
+```
+
+## When static wins
+
+Static wins when the content is the same for everyone and changes rarely. Marketing pages, documentation, project archives, blog posts. This site is almost entirely static: the writing pages, the project pages and the homepage are generated at build time, then served from a CDN. That is why they load fast even on a bad connection in Karachi.
+
+The limits are real. Static pages cannot show per-user data, and their freshness is tied to your deploy cadence. A page that shows a stock price or a live inbox does not belong here.
+
+## When dynamic wins
+
+Dynamic rendering is correct when the response depends on the request: session cookies, authorization headers, query parameters, or data that must be current to the second.
+
+The cost is latency. Every request now waits for your database, and that wait lands directly on your largest contentful paint. If you go dynamic, cache aggressively at the edge or accept the slower numbers.
+
+## Streaming for the slow query
+
+The third option is the one people forget. If one slow query blocks the whole page, stream around it:
+
+```tsx
+export default function Page() {
+  return (
+    <>
+      <Header />
+      <Suspense fallback={<Skeleton />}>
+        <SlowReport />
+      </Suspense>
+    </>
+  )
+}
+```
+
+The shell renders immediately, so the user sees content while the slow part loads. It is the difference between a page that feels instant and one that feels broken, without hiding data.
+
+## How I choose, per route
+
+I ask three questions in order:
+
+1. Is this identical for every visitor? If yes, static.
+2. Does it depend on who is asking? If yes, dynamic.
+3. Does it have exactly one slow part? If yes, keep it static and stream the slow part.
+
+Most projects end up as a mostly-static site with two or three dynamic routes (account pages, dashboards, anything behind a login). That mix gets you the speed of static where it matters and the correctness of dynamic where it must.
+
+## What I would do differently
+
+In an early project I made everything dynamic because it felt more real-time. It was not. It was just slower, and it pushed the database bill up for pages nobody had changed in a month. The rendering mode should be a decision you write down per route, not a default you inherit.
+
+If you want to see how this plays out in a real codebase, the [project archive](/projects) links to the source of every application here.

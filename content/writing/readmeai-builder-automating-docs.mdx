@@ -1,0 +1,48 @@
+---
+title: 'What I learned automating README files with AI'
+description: 'Build log of an AI README generator: structuring the input so the model has real facts to work with, evaluation without vibes, and why the drafts still need a human pass.'
+date: '2026-09-10'
+category: 'Build logs'
+tags:
+  - 'ai'
+  - 'llm'
+  - 'documentation'
+published: true
+slug: 'readmeai-builder-automating-docs'
+---
+
+Anyone who has written documentation knows the shape of the problem: the README is always the last thing written, which is why it is always wrong. I built a tool that drafts README files from a repository, and the interesting part was not the generation. It was making the generation factual.
+
+## The obvious version does not work
+
+The naive approach is "send the repo to a model, ask for a README." It produces confident paragraphs about install steps that do not exist and features that live in someone's roadmap. The model fills gaps with plausible fiction, and a README is exactly the document where plausible fiction does the most damage, because it is the first thing a new user trusts.
+
+## Structure the input first
+
+The fix was doing the unglamorous work before any model call. The tool reads what actually exists: `package.json` scripts, the dependency list, top-level files, license, any docs folder. That becomes a structured fact sheet:
+
+```json
+{
+  "name": "telecloud",
+  "scripts": { "dev": "next dev", "build": "next build" },
+  "hasLicense": true,
+  "entryFiles": ["app/page.tsx"],
+  "dependencies": ["next", "postgresql2"]
+}
+```
+
+The model's job changes from *invent a README* to *prose-ify this fact sheet*. Every claim in the output traces to a field. When a section needs something the repo does not contain (screenshots, contributing guide), the tool says the section is needed rather than inventing content.
+
+## Evaluating without vibes
+
+Early versions felt better or worse depending on my mood. So the output went through a grader: does the install section match the actual scripts? Does every referenced file exist? Is there any sentence that mentions a file the repo does not have? That check runs on the output, is cheap, and catches the expensive class of error.
+
+## The human pass stays
+
+What automation removed was the blank page, not the writing. The drafts still need someone to cut the marketing voice, fix the naming, and decide what actually matters. Every generated README on my projects got a manual edit. The tool is a first draft machine, and calling it anything else would be dishonest, because readers can tell.
+
+## What I would change
+
+The failure to fix: repositories with monorepo layouts still confuse the file scan. And I would ship the grader as part of the product rather than keeping it in the test script, because a visible "3 claims could not be verified" notice builds more trust than a clean-looking draft.
+
+Other experiments like this one are listed on the [project archive](/projects).

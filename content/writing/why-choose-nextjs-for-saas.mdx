@@ -1,0 +1,45 @@
+---
+title: 'Why I reach for Next.js when building SaaS products'
+description: 'A practical case for Next.js as a SaaS framework: one deployable app, built-in SEO metadata, server-side secrets, plus the trade-offs and migration risks I warn clients about.'
+date: '2026-08-30'
+category: 'Engineering notes'
+tags:
+  - 'nextjs'
+  - 'saas'
+  - 'architecture'
+published: true
+slug: 'why-nextjs-for-saas'
+---
+
+Most of what I ship as a product is one Next.js application: pages, API routes, auth handling and background work in a single repository with a single deploy. This is why, including the parts I do not like.
+
+## One deployable is one system
+
+A SaaS built as a separate frontend and backend means two CORS configurations, two environments, and a contract that drifts between them. Next.js collapses that: server components read the database directly, API routes serve external clients, and the type layer spans the whole thing. Fewer moving parts means fewer places for a Friday deploy to go wrong.
+
+## Metadata and SEO come built in
+
+Every SaaS has marketing pages, and every marketing page needs titles, canonicals, Open Graph images, a sitemap. In Next.js these are file conventions and a metadata export, not vendor tooling:
+
+```ts
+export const metadata = {
+  title: 'Formivo · form endpoint for existing websites',
+  alternates: { canonical: 'https://formivo-three.vercel.app/' },
+}
+```
+
+The site you are reading does exactly this on every route, which means the marketing surface of a product costs nothing extra.
+
+## Secrets stay on the server
+
+The pattern I most want out of a framework: database credentials and third-party API keys never reach the browser. Server components and route handlers make that the default rather than something you defend against. Client code gets props; it does not get the connection string.
+
+## The trade-offs, honestly
+
+Middleware and rendering defaults have changed between major versions more than once, and migrating a large app is a real cost. Server component boundaries take practice: reaching for client state where server components would do is the beginner's habit, and it silently reintroduces the SPA you were trying to avoid. And heavy client interactivity still belongs in client components, so the "no client JS" promise is a spectrum, not a guarantee.
+
+## When I would not choose it
+
+A pure content site with no interactivity does not need it, and a mobile-first API for third parties can be a plain Node service with less machinery. But for the specific case of a product with pages, accounts and an API: one Next.js app remains the shortest path I know.
+
+How that plays out in real code is visible across the [project archive](/projects).

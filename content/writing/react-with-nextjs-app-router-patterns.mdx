@@ -1,0 +1,60 @@
+---
+title: 'React with the Next.js App Router: the five patterns I keep reusing'
+description: 'Server and client components, layouts, loading states, server actions and URL search params: the App Router patterns that survive contact with a real product.'
+date: '2026-08-28'
+category: 'Guides'
+tags:
+  - 'react'
+  - 'nextjs'
+  - 'app-router'
+published: true
+slug: 'react-with-nextjs-app-router'
+---
+
+A year into living in the App Router, the same five patterns show up in almost everything I build. They are unglamorous, and that is the point; they are what I reach for by reflex now.
+
+## 1. Server components by default
+
+Components are server-rendered until they prove they need the browser. Fetching data is a plain async call, with no effect, no loading state, no dependency array:
+
+```tsx
+export default async function ProjectsPage() {
+  const projects = await getPublishedProjects()
+  return <ProjectList projects={projects} />
+}
+```
+
+The client boundary is a cost you pay deliberately, at the leaf: a filter button, a form, a menu. Not at the root.
+
+## 2. Layouts for durable chrome
+
+The header and footer of this site live in the root layout. Route groups get their own layouts when a section needs different chrome, and the shared shell persists across navigation, so it does not remount or flash. Anything truly global belongs here and nowhere else.
+
+## 3. Loading and error files
+
+`loading.tsx` and `error.tsx` next to a slow route give you a skeleton and a recovery path without wiring a single piece of state. They are the cheapest perceived-performance win in the framework, and most projects skip them.
+
+## 4. Server actions for mutations
+
+Forms that write data do not need a manually maintained endpoint. A server action receives the form data, runs validation and redirects, and progressive enhancement still works if JavaScript is slow to arrive. The contact form on this site keeps a plain `action` endpoint as its fallback for the same reason.
+
+## 5. Search params as state
+
+Filters and pagination that should be shareable live in the URL, read server-side:
+
+```tsx
+export default async function Page({
+  searchParams,
+}: { searchParams: Promise<{ category?: string }> }) {
+  const { category } = await searchParams
+  return <Archive category={category} />
+}
+```
+
+The link is now the state. It bookmarks, it survives refresh, and it works without hydration.
+
+## What still catches people
+
+Awaiting `params` and `searchParams` as promises, forgetting `'use client'` on a component that uses hooks and getting a build-time error rather than a runtime one, and reaching for context where prop drilling from a parent layout would keep the tree server-rendered. All three bite once, then never again.
+
+Each of these patterns is in use somewhere in the code behind the [project archive](/projects).
